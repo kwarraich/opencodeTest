@@ -8,6 +8,8 @@
   "scripts": {
     "typecheck": "tsgo --noEmit",
     "fuzz": "bun test test/fuzz",
+    "lint:standard": "bunx ts-standard",
+    "lint:standard:fix": "bunx ts-standard --fix",
     "test": "bun test --timeout 30000 --only-failures",
     "test:httpapi": "bun run script/httpapi-exercise.ts --mode coverage --fail-on-missing --fail-on-skip && bun run script/httpapi-exercise.ts --modeauth --fail-on-missing --fail-on-skip && bun run script/httpapi-exercise.ts --mode effect --fail-on-missing --fail-on-skip",
     "bench:test": "bun run script/bench-test-suite.ts",
@@ -15,6 +17,15 @@
     "build": "bun run script/build.ts",
     "dev": "bun run --conditions=browser ./src/index.ts",
     "dev:temporary": "bun run --conditions=browser ./src/temporary.ts"
+  },
+    "ts-standard": {
+    "project": "./tsconfig.json",
+    "ignore": [
+      "dist",
+      "node_modules",
+      "test",
+      "script"
+    ]
   },
   "bin": {
     "opencode": "./bin/opencode"
