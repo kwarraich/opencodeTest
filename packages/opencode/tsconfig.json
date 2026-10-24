@@ -8,6 +8,7 @@
     "types": [],
     "noUncheckedIndexedAccess": false,
     "customConditions": ["browser"],
+    // needed for fast-fuzz (it relies on decorators)
     "paths": {
       "@/*": ["./src/*"],
       "@test/*": ["./test/*"]
