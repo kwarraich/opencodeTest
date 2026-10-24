@@ -1,0 +1,11 @@
+{
+  "name": "opencode-dev",
+  "image": "oven/bun:1",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {}
+  },
+  "postCreateCommand": "apt-get update && apt-get install -y build-essential curl && bun install && curl https://qlty.sh | bash",
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/root/.qlty/bin"
+  }
+}
